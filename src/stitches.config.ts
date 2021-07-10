@@ -59,7 +59,7 @@ export const { styled, css, getCssString, theme, global } = createCss({
 });
 
 
-export const darkTheme = theme({
+export const darkTheme = theme('dark-theme', {
   colors: {
     gray100: '#303136',
     gray200: '#3d4144',

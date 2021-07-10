@@ -1,7 +1,6 @@
 import React, { createRef, useEffect } from 'react';
 
-import { THEME } from '~/constants';
-import { useThemeContext } from '~/hooks/useTheme';
+import { useDarkMode } from '~/hooks/useDarkMode';
 
 const src = 'https://utteranc.es/client.js';
 const branch = 'master';
@@ -13,8 +12,8 @@ interface Props {
 const Utterances = ({ repo }: Props) => {
   const ref = createRef<HTMLDivElement>();
 
-  const { theme } = useThemeContext();
-  const utteranceTheme = (theme === THEME.LIGHT) ? 'github-light' : 'photon-dark';
+  const [darkMode] = useDarkMode();
+  const utteranceTheme = darkMode ? 'photon-dark' : 'github-light';
 
   useEffect(() => {
     const utterances = document.createElement('script');
