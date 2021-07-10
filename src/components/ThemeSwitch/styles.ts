@@ -1,18 +1,16 @@
 import { darkTheme, styled } from '~/stitches.config';
 
 export const Container = styled('div', {
-  '&': {
-    position: 'relative',
+  position: 'relative',
 
-    display: 'inline-block',
-    alignSelf: 'flex-end',
+  display: 'inline-block',
+  alignSelf: 'flex-end',
 
-    cursor: 'pointer',
+  cursor: 'pointer',
 
-    userSelect: 'none',
-    touchAction: 'pan-x',
-    'webkitTapHighlightColor': 'transparent',
-  },
+  userSelect: 'none',
+  touchAction: 'pan-x',
+  'webkitTapHighlightColor': 'transparent',
 
   '@md': {
     alignSelf: 'auto',
@@ -20,18 +18,16 @@ export const Container = styled('div', {
 });
 
 export const Checkbox = styled('input', {
-  '&': {
-    position: 'absolute',
+  position: 'absolute',
 
-    height: '1px',
-    marginLeft: '-1px',
-    padding: 0,
-    border: 0,
+  height: '1px',
+  marginLeft: '-1px',
+  padding: 0,
+  border: 0,
 
-    overflow: 'hidden',
+  overflow: 'hidden',
 
-    clip: 'rect(0 0 0 0)',
-  }
+  clip: 'rect(0 0 0 0)',
 });
 
 export const Track = styled('div', {
@@ -64,6 +60,8 @@ export const Thumb = styled('div', {
   transform: 'translate(0.5rem, -50%)',
 
   transition: 'transform $switchTransitionDuration $transitionTiming',
+
+  'webkitTapHighlightColor': '$yellowAccent',
 
   [`.${darkTheme} &`]: {
     transform: 'translate(1.75rem, -50%)',

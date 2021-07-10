@@ -14,6 +14,7 @@ export const { styled, css, getCssString, theme, global } = createCss({
       white: '#fff',
       black: '#000',
       yellow: '#ffd75e',
+      yellowAccent: '#ffa659',
 
       primary100: '#edeafc',
       primary200: '#bcb2f5',
