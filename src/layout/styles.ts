@@ -1,0 +1,123 @@
+import { styled, global } from '~/stitches.config';
+
+export const globalStyles = global({
+  ':root': {
+    fontFamily: '"Pretendard", apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+    textRendering: 'optimizeLegibility',
+  },
+  '*': {
+    boxSizing: 'border-box',
+    margin: 0,
+    padding: 0,
+  },
+  html: {
+    minHeight: '100vh',
+  },
+  body: {
+    minHeight: '100vh',
+  },
+  '#___gatsby, #gatsby-focus-wrapper': {
+    minHeight: '100vh',
+  },
+  a: {
+    color: 'inherit',
+
+    textDecoration: 'none',
+  },
+  h1: {
+    fontSize: '1.75rem',
+  },
+  h2: {
+    fontSize: '1.5rem',
+  },
+  h3: {
+    fontSize: '1.25rem',
+  },
+  h4: {
+    fontSize: '1rem',
+  },
+  h5: {
+    fontSize: '0.875rem',
+  },
+  h6: {
+    fontSize: '0.75rem',
+  },
+  img: {
+    display: 'block',
+    margin: '0 auto',
+  },
+  table: {
+    width: '100%',
+    marginTop: '0.75rem',
+    marginBottom: '0.75rem',
+    borderCollapse: 'collapse',
+
+    lineHeight: '1.75rem',
+  },
+  tr: {
+    borderBottom: '1px solid $borderGray',
+  },
+  th: {
+    paddingTop: '0.75rem',
+    paddingBottom: '0.75rem',
+  },
+  td: {
+    paddingTop: '0.75rem',
+    paddingBottom: '0.75rem',
+  },
+  p: {
+    marginTop: '0.75rem',
+    marginBottom: '0.75rem',
+
+    lineHeight: 1.625,
+  },
+  blockquote: {
+    paddingLeft: '1rem',
+    borderLeft: '0.25rem solid $borderPrimary',
+  },
+  article: {
+    'ul, ol': {
+      marginLeft: '2rem',
+
+      'ul, ol': {
+        marginLeft: '1.5rem',
+      },
+
+      li: {
+        marginTop: '0.375rem',
+        marginBottom: '0.375rem',
+
+        p: {
+          margin: 0,
+        },
+      },
+    },
+
+    'pre[class^="language-"]': {
+      borderRadius: '0.25rem',
+    }
+  },
+});
+export const Root = styled('div', {
+  display: 'flex',
+  minHeight: '100vh',
+
+  color: '$text500',
+
+  backgroundColor: '$backgroundColor',
+
+  transition: 'color $transitionDuration $transitionTiming, background-color $transitionDuration $transitionTiming',
+});
+
+export const Container = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  maxWidth: '$contentWidth',
+  margin: '0 auto',
+  paddingRight: '1em',
+  paddingLeft: '1em',
+
+  '@md': {
+    padding: 0,
+  },
+});

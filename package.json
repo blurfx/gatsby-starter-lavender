@@ -1,0 +1,82 @@
+{
+  "name": "gatsby-starter-lavender",
+  "private": true,
+  "description": "purple flavored blog starter based on Gatsby",
+  "version": "1.0.0",
+  "author": "Changhui Lee <iam@xo.dev>",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "lint:fix": "eslint --fix src",
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blurfx/gatsby-starter-lavender.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blurfx/gatsby-starter-lavender/issues"
+  },
+  "dependencies": {
+    "@stitches/react": "^0.2.2",
+    "disqus-react": "^1.1.1",
+    "gatsby": "^3.6.2",
+    "gatsby-plugin-feed": "^3.6.0",
+    "gatsby-plugin-gatsby-cloud": "^2.6.1",
+    "gatsby-plugin-google-analytics": "^3.9.0",
+    "gatsby-plugin-image": "^1.6.0",
+    "gatsby-plugin-manifest": "^3.6.0",
+    "gatsby-plugin-module-resolver": "^1.0.3",
+    "gatsby-plugin-offline": "^4.6.0",
+    "gatsby-plugin-react-helmet": "^4.6.0",
+    "gatsby-plugin-sharp": "^3.6.0",
+    "gatsby-plugin-typegen": "^2.2.4",
+    "gatsby-remark-autolink-headers": "^4.5.0",
+    "gatsby-remark-copy-linked-files": "^3.2.0",
+    "gatsby-remark-images": "^4.2.0",
+    "gatsby-remark-prismjs": "^4.2.0",
+    "gatsby-remark-responsive-iframe": "^3.2.0",
+    "gatsby-remark-smartypants": "^3.2.0",
+    "gatsby-source-filesystem": "^3.6.0",
+    "gatsby-transformer-remark": "^3.2.0",
+    "gatsby-transformer-sharp": "^3.6.0",
+    "prismjs": "^1.23.0",
+    "query-string": "^7.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.13.16",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
+    "@types/react-helmet": "^6.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.27.0",
+    "babel-preset-gatsby-package": "^1.7.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-order": "^4.1.0",
+    "typescript": "^4.3.2"
+  },
+  "homepage": "https://github.com/blurfx/gatsby-starter-lavender#readme",
+  "keywords": [
+    "gatsby",
+    "gatsby-starter",
+    "blog",
+    "template",
+    "markdown"
+  ],
+  "license": "0BSD",
+  "main": "n/a"
+}

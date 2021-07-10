@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "declaration": false,
+    "declarationMap": false,
+    "lib": ["ESNext", "dom"],
+    "jsx": "preserve",
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "src/__generated__/gatsby-types.ts",
+      "src/themes/types/index.ts"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "typings/*",
+    "gatsby-config.ts",
+    "gatsby-node.ts",
+    "gatsby-browser.ts",
+    "gatsby-ssr.tsx",
+    "blog-config.ts",
+    "lint-staged.config.js",
+    "src/stitches.config.ts"
+  ]
+}
