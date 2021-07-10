@@ -13,6 +13,8 @@ export const Container = styled('div', {
 
   '.profile-image': {
     borderRadius: '50%',
+
+    transform: 'translateZ(0)',
   },
 });
 
