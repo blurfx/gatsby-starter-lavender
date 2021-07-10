@@ -1,4 +1,4 @@
-import { styled } from '~/stitches.config';
+import { darkTheme, styled } from '~/stitches.config';
 
 export const Container = styled('div', {
   '&': {
@@ -65,13 +65,9 @@ export const Thumb = styled('div', {
 
   transition: 'transform $switchTransitionDuration $transitionTiming',
 
-  variants: {
-    dark: {
-      true: {
-        transform: 'translate(1.75rem, -50%)',
-      }
-    }
-  }
+  [`.${darkTheme} &`]: {
+    transform: 'translate(1.75rem, -50%)',
+  },
 });
 
 export const Shadow = styled('div', {
@@ -87,11 +83,7 @@ export const Shadow = styled('div', {
 
   transition: 'transform $switchTransitionDuration $transitionTiming',
 
-  variants: {
-    dark: {
-      true: {
-        transform: 'translate(1.35rem, -70%) scale(1)',
-      }
-    }
-  }
+  [`.${darkTheme} &`]: {
+    transform: 'translate(1.35rem, -70%) scale(1)',
+  },
 });
