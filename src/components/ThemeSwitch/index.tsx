@@ -12,7 +12,7 @@ const ThemeSwitch = () => {
   };
 
   return (
-    <Container onClick={onThemeSwitchClick}>
+    <Container role={'button'} aria-pressed={darkMode} onClick={onThemeSwitchClick}>
       <Track />
       <ThumbWrapper>
         <Thumb />

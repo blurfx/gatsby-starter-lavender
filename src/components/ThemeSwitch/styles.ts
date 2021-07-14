@@ -10,7 +10,7 @@ export const Container = styled('div', {
 
   userSelect: 'none',
   touchAction: 'pan-x',
-  'webkitTapHighlightColor': 'transparent',
+  '-webkit-tap-highlight-color': 'transparent',
 
   '@md': {
     alignSelf: 'auto',
