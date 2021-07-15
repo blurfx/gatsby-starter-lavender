@@ -59,6 +59,8 @@ export const Metadata = styled('div', {
 });
 
 export const Content = styled('section', {
+  wordBreak: 'keep-all',
+
   h1: {
     marginTop: '2rem',
     marginBottom: '1.25rem',
