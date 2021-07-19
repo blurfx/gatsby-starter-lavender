@@ -11,7 +11,7 @@ import { usePage } from '~/hooks/usePage';
 import { useSeo } from '~/hooks/useSeo';
 import { useTag } from '~/hooks/useTag';
 import Layout from '~/layout';
-import { filterPosts, filterPostsByTitle } from '~/utils/filterPosts';
+import { filterPostsByTag, filterPostsByTitle } from '~/utils/filterPosts';
 
 
 const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) => {
@@ -23,7 +23,7 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) =>
   const tags = useArticleTags().allMarkdownRemark?.distinct as string[];
 
   const siteTitle = data.site?.siteMetadata?.title ?? '';
-  const posts = filterPosts(
+  const posts = filterPostsByTag(
     filterPostsByTitle(
       data.allMarkdownRemark.nodes, titleFilter),
     currentTag
