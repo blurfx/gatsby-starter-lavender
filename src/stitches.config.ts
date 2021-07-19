@@ -35,6 +35,7 @@ export const { styled, css, getCssString, theme, global } = createCss({
 
       link: '$primary400',
 
+      titleFilterBackground: '$gray100',
       tagColor: '$primary400',
       tagFilterBackground: '$primary100',
 
@@ -90,6 +91,7 @@ export const darkTheme = theme('dark-theme', {
 
     link: '$primary200',
 
+    titleFilterBackground: '$gray200',
     tagColor: '$primary400',
     tagFilterBackground: '$primary100',
 
