@@ -16,6 +16,23 @@ export const Title = styled('h3', {
   transition: 'color $transitionDuration $transitionTiming',
 });
 
+export const Input = styled('input', {
+  maxWidth: '18.75rem',
+  width: '100%',
+  height: '2.5rem',
+  marginTop: '1rem',
+  padding: '0.5rem 0.75rem',
+  border: '1px solid $borderGray',
+  borderRadius: '0.25rem',
+
+  color: '$text500',
+  fontSize: '1rem',
+
+  backgroundColor: '$titleFilterBackground',
+
+  appearance: 'none',
+});
+
 export const TagListWrapper = styled('div', {
   display: 'flex',
   flexWrap: 'wrap',

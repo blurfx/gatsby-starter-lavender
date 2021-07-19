@@ -1,17 +1,18 @@
-import React, { memo, MouseEvent, useCallback } from 'react';
+import React, { ChangeEventHandler, memo, MouseEvent, useCallback } from 'react';
 
 import { TAG } from '~/constants';
 
-import { Container, Title, TagListWrapper, Tag } from './styles';
+import { Container, Title, TagListWrapper, Tag, Input } from './styles';
 
 interface Props {
   tags: string[];
+  titleFilter: string;
+  onTitleFilterChange: ChangeEventHandler<HTMLInputElement>;
   currentTag: string;
   setCurrentTag: (tag: string) => void;
 }
 
-
-const TagFilter = ({ tags, currentTag, setCurrentTag }: Props) => {
+const ArticleFilter = ({ tags, currentTag, setCurrentTag, titleFilter, onTitleFilterChange }: Props) => {
   const onClickTag = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     const tag = (e.target as HTMLButtonElement).dataset['tag'] as string;
 
@@ -20,7 +21,13 @@ const TagFilter = ({ tags, currentTag, setCurrentTag }: Props) => {
 
   return (
     <Container>
-      <Title>Tags</Title>
+      <Title>Filter</Title>
+      <Input
+        type='text'
+        placeholder='Article name..'
+        value={titleFilter}
+        onChange={onTitleFilterChange}
+      />
       <TagListWrapper>
         <Tag
           type='button'
@@ -46,4 +53,4 @@ const TagFilter = ({ tags, currentTag, setCurrentTag }: Props) => {
   );
 };
 
-export default memo(TagFilter);
+export default memo(ArticleFilter);

@@ -1,30 +1,39 @@
 import { PageProps, graphql } from 'gatsby';
-import React, {  useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 
+import ArticleFilter from '~/components/ArticleFilter';
 import ArticleList from '~/components/ArticleList';
 import Profile from '~/components/Profile';
 import Seo from '~/components/Seo';
-import TagFilter from '~/components/TagFilter';
 import { useArticleTags } from '~/hooks/useArticleTags';
 import { useInfiniteScroll } from '~/hooks/useInfiniteScroll';
 import { usePage } from '~/hooks/usePage';
 import { useSeo } from '~/hooks/useSeo';
 import { useTag } from '~/hooks/useTag';
 import Layout from '~/layout';
-import { filterPostsByTag } from '~/utils/filterPostsByTag';
+import { filterPostsByTag, filterPostsByTitle } from '~/utils/filterPosts';
 
 
 const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) => {
   const infiniteScrollRef = useRef(null);
   const [page, setPage] = usePage();
+  const [titleFilter, setTitleFilter] = useState('');
   const [currentTag, setCurrentTag] = useTag();
   const siteMetadata = useSeo().site?.siteMetadata;
   const tags = useArticleTags().allMarkdownRemark?.distinct as string[];
 
   const siteTitle = data.site?.siteMetadata?.title ?? '';
-  const posts = filterPostsByTag(data.allMarkdownRemark.nodes, currentTag);
+  const posts = filterPostsByTag(
+    filterPostsByTitle(
+      data.allMarkdownRemark.nodes, titleFilter),
+    currentTag
+  );
   const articlePerPage = 5;
   const totalPage = Math.ceil(posts.length / articlePerPage);
+
+  const onTitleFilterChange = useCallback((event) => {
+    setTitleFilter(event.target.value);
+  }, []);
 
   useInfiniteScroll(infiniteScrollRef, useCallback(() => {
     if (page < totalPage) {
@@ -40,13 +49,19 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) =>
         description={siteMetadata?.description ?? ''}
       />
       <Profile />
+      <ArticleFilter
+        tags={tags}
+        titleFilter={titleFilter}
+        onTitleFilterChange={onTitleFilterChange}
+        currentTag={currentTag}
+        setCurrentTag={setCurrentTag}
+      />
       {posts.length === 0 ? (
         <p>
           No posts found.
         </p>
       ): (
         <>
-          <TagFilter tags={tags} currentTag={currentTag} setCurrentTag={setCurrentTag} />
           <ArticleList posts={posts.slice(0, page * articlePerPage)} />
         </>
       )}
