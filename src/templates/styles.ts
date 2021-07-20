@@ -66,12 +66,20 @@ export const Content = styled('section', {
     marginBottom: '1.25rem',
     paddingBottom: '0.25rem',
     borderBottom: '1px solid $borderGray',
+
+    a: {
+      borderBottom: 'none',
+    }
   },
   h2: {
     marginTop: '1.5rem',
     marginBottom: '1rem',
     paddingBottom: '0.25rem',
     borderBottom: '1px solid $borderGray',
+
+    a: {
+      borderBottom: 'none',
+    }
   },
   a: {
     borderBottom: '1px solid $borderPrimary',
