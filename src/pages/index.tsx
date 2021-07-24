@@ -5,6 +5,7 @@ import ArticleFilter from '~/components/ArticleFilter';
 import ArticleList from '~/components/ArticleList';
 import Profile from '~/components/Profile';
 import Seo from '~/components/Seo';
+import { TAG } from '~/constants';
 import { useArticleTags } from '~/hooks/useArticleTags';
 import { useInfiniteScroll } from '~/hooks/useInfiniteScroll';
 import { usePage } from '~/hooks/usePage';
@@ -36,14 +37,20 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) =>
     setTitleFilter(event.target.value);
   }, []);
 
+  const resetFilter = () => {
+    setTitleFilter('');
+    setCurrentTag(TAG.ALL);
+  };
+
   useInfiniteScroll(infiniteScrollRef, useCallback(() => {
     if (page < totalPage) {
       setPage(page + 1);
     }
   }, [page, setPage, totalPage]));
 
+
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} resetFilter={resetFilter}>
       <Seo
         lang='en'
         title={siteMetadata?.title ?? ''}
