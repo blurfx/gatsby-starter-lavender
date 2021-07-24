@@ -1,5 +1,5 @@
 import { PageProps, graphql } from 'gatsby';
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef } from 'react';
 
 import ArticleFilter from '~/components/ArticleFilter';
 import ArticleList from '~/components/ArticleList';
@@ -8,6 +8,7 @@ import Seo from '~/components/Seo';
 import { useArticleTags } from '~/hooks/useArticleTags';
 import { useInfiniteScroll } from '~/hooks/useInfiniteScroll';
 import { usePage } from '~/hooks/usePage';
+import { useSearchFilter } from '~/hooks/useSearchFilter';
 import { useSeo } from '~/hooks/useSeo';
 import { useTag } from '~/hooks/useTag';
 import Layout from '~/layout';
@@ -17,7 +18,7 @@ import { filterPostsByTag, filterPostsByTitle } from '~/utils/filterPosts';
 const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) => {
   const infiniteScrollRef = useRef(null);
   const [page, setPage] = usePage();
-  const [titleFilter, setTitleFilter] = useState('');
+  const [titleFilter, setTitleFilter] = useSearchFilter();
   const [currentTag, setCurrentTag] = useTag();
   const siteMetadata = useSeo().site?.siteMetadata;
   const tags = useArticleTags().allMarkdownRemark?.distinct as string[];
