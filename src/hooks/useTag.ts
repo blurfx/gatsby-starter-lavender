@@ -17,9 +17,11 @@ export const useTag = (): [string, (t: string) => void] => {
   useEffect(() => {
     const params = qs.parse(location.search);
     const tag = params.tag as string;
+
     if (tag) {
       setCurrentTag(tag);
     }
+
     window.addEventListener('popstate', onPopState);
 
     return () => {

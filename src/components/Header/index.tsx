@@ -7,15 +7,16 @@ import { Circle, Container, Title, TitleWrapper } from './styles';
 
 interface Props {
   title: string;
+  resetFilter?: () => void;
 }
 
-const Header = ({ title }: Props) => {
+const Header = ({ title, resetFilter }: Props) => {
   return (
     <Container>
       <TitleWrapper>
         <Circle />
         <Title>
-          <Link to={'/'}>{title}</Link>
+          <Link to={'/'} onClick={resetFilter}>{title}</Link>
         </Title>
       </TitleWrapper>
       <ThemeSwitch />
