@@ -57,6 +57,12 @@ export const plugins = [
             isIconAfterHeader: true,
           }
         },
+        {
+          resolve: 'gatsby-remark-katex',
+          options: {
+            strict: 'ignore',
+          }
+        },
         'gatsby-remark-external-links',
         'gatsby-remark-prismjs',
         'gatsby-remark-copy-linked-files',
