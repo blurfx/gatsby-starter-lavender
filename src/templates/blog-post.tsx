@@ -10,6 +10,8 @@ import Utterances from '~/components/Utterances';
 import { useComment } from '~/hooks/useComment';
 import Layout from '~/layout';
 
+import 'katex/dist/katex.min.css';
+
 import {
   Article, TableOfContents, Content, Footer, Header, Metadata, Title
 } from './styles';
