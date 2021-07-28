@@ -30,6 +30,8 @@ export const Input = styled('input', {
 
   backgroundColor: '$titleFilterBackground',
 
+  transition: 'color $transitionDuration $transitionTiming, border-color $transitionDuration $transitionTiming, background-color $transitionDuration $transitionTiming',
+
   appearance: 'none',
 });
 
