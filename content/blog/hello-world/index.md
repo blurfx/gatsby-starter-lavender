@@ -229,3 +229,16 @@ This paragraph has some `code` in it.
 
     This paragraph has some `code` in it.
 
+LaTeX supported by KaTeX.
+
+
+$a^2 + b^2 = c^2$
+
+$$
+\begin{CD}
+A @>a>> B \\
+@VbVV @AAcA \\
+C @= D
+\end{CD}
+$$
+
