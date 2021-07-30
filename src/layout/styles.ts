@@ -42,6 +42,12 @@ export const globalStyles = global({
   h6: {
     fontSize: '0.75rem',
   },
+  hr: {
+    marginTop: '0.25rem',
+    marginBottomBottom: '0.25rem',
+    border: 0,
+    borderTop: '0.125rem solid $borderGray',
+  },
   img: {
     display: 'block',
     margin: '0 auto',
