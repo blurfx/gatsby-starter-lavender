@@ -44,7 +44,7 @@ export const globalStyles = global({
   },
   hr: {
     marginTop: '0.25rem',
-    marginBottomBottom: '0.25rem',
+    marginBottom: '0.25rem',
     border: 0,
     borderTop: '0.125rem solid $borderGray',
   },
