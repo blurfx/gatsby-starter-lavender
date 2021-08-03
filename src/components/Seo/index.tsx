@@ -8,9 +8,10 @@ interface Props {
   lang: string;
   meta?: Metadata[];
   title: string;
+  noSiteName?: boolean;
 }
 
-const Seo = ({ description, lang, meta = [], title }: Props) => {
+const Seo = ({ description, lang, meta = [], title, noSiteName = false }: Props) => {
   const { site } = useSeo();
 
   if (site === undefined) {
@@ -26,7 +27,7 @@ const Seo = ({ description, lang, meta = [], title }: Props) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+      titleTemplate={noSiteName ? undefined : `%s | ${defaultTitle}`}
       meta={[
         {
           name: 'description',
