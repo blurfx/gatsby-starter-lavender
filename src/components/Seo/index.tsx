@@ -26,7 +26,7 @@ const Seo = ({ description, lang, meta = [], title }: Props) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+      titleTemplate={title === defaultTitle ? undefined : `%s | ${defaultTitle}`}
       meta={[
         {
           name: 'description',
