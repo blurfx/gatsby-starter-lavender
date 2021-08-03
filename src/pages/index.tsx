@@ -55,6 +55,7 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) =>
         lang='en'
         title={siteMetadata?.title ?? ''}
         description={siteMetadata?.description ?? ''}
+        noSiteName
       />
       <Profile />
       <ArticleFilter
