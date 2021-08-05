@@ -85,6 +85,8 @@ export const globalStyles = global({
     borderLeft: '0.25rem solid $borderPrimary',
   },
   article: {
+    overflowWrap: 'break-word',
+
     'ul, ol': {
       marginLeft: '2rem',
 
