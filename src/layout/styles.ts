@@ -103,6 +103,9 @@ export const globalStyles = global({
       borderRadius: '0.25rem',
     }
   },
+  'pre[class*="language-"], code[class*="language-"]': {
+    whiteSpace: 'pre-wrap',
+  },
 });
 export const Root = styled('div', {
   display: 'flex',
