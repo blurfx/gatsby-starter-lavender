@@ -15,6 +15,8 @@ export const globalStyles = global({
   },
   body: {
     minHeight: '100vh',
+
+    backgroundColor: '$backgroundColor',
   },
   '#___gatsby, #gatsby-focus-wrapper': {
     minHeight: '100vh',
