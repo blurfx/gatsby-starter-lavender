@@ -51,6 +51,7 @@ export const globalStyles = global({
   img: {
     display: 'block',
     margin: '0 auto',
+    maxWidth: '100%',
   },
   table: {
     width: '100%',
