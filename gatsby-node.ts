@@ -96,6 +96,7 @@ export const createSchemaCustomization = ({ actions }: CreateSchemaCustomization
       description: String
       date: Date @dateformat
       tags: [String]
+      thumbnail: String
     }
 
     type Fields {

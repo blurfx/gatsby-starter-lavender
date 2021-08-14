@@ -19,15 +19,28 @@ import {
 
 const BlogPostTemplate = ({ data, location }: PageProps<GatsbyTypes.BlogPostBySlugQuery>) => {
   const post = data.markdownRemark!;
+  const siteUrl = data.site?.siteMetadata?.siteUrl ?? '';
   const siteTitle = data.site?.siteMetadata?.title ?? '';
   const { previous, next } = data;
-  const { title, description, date, tags } = post.frontmatter!;
+  const { title, description, date, tags, thumbnail } = post.frontmatter!;
   const commentConfig = useComment().site?.siteMetadata?.comment;
 
   const disqusConfig = {
     title,
     identifier: post.fields?.slug,
   };
+  const meta: Metadata[] = [];
+
+  if (thumbnail) {
+    const properties = ['og:image', 'twitter:image'];
+
+    for (const property of properties) {
+      meta.push({
+        property,
+        content: `${siteUrl}${thumbnail}`,
+      });
+    }
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -35,6 +48,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<GatsbyTypes.BlogPostBySl
         lang='en'
         title={title ?? ''}
         description={description ?? post.excerpt ?? ''}
+        meta={meta}
       />
       <Article
         itemScope
@@ -78,6 +92,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -93,6 +108,7 @@ export const pageQuery = graphql`
         date(formatString: "YYYY-MM-DD")
         description
         tags
+        thumbnail
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

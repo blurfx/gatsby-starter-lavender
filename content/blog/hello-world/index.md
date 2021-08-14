@@ -3,6 +3,7 @@ title: Hello World
 date: 2021-07-10
 description: "Hello World"
 tags: [Java, Development]
+thumbnail: /thumbnails/hello-world.jpg
 ---
 
 This is my first post on my new fake blog! How exciting!
