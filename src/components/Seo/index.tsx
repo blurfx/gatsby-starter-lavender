@@ -6,8 +6,8 @@ import { useSeo } from '~/hooks/useSeo';
 interface Props {
   description: string;
   lang: string;
-  meta?: Metadata[];
   title: string;
+  meta?: Metadata[];
   noSiteName?: boolean;
 }
 
