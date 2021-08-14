@@ -9,7 +9,6 @@ interface Props {
   title: string;
   meta?: Metadata[];
   noSiteName?: boolean;
-
 }
 
 const Seo = ({ description, lang, meta = [], title, noSiteName = false }: Props) => {
