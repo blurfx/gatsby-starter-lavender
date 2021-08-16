@@ -95,6 +95,9 @@ export const Content = styled('section', {
       overflowWrap: 'break-word',
     },
   },
+  'pre, code': {
+    fontVariantLigatures: 'none',
+  }
 });
 
 export const Footer = styled('footer', {
