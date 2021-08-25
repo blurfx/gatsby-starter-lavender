@@ -10,6 +10,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint:fix": "eslint --fix src",
+    "lint-staged": "lint-staged",
     "typecheck": "tsc --noEmit --skipLibCheck",
     "prepare": "husky install"
   },
