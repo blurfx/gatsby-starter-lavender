@@ -3,6 +3,7 @@ const config = {
   author: 'Hubert Selby Jr.', // Your name
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   siteUrl: 'https://gatsby-starter-lavender.vercel.app',
+  thumbnail: '/thumbnails/main.png',  // Default blog thumbnail. i.e. '/thumbnails/main.png'
   social: {
     github: 'blurfx',   // GitHub username
     twitter: '',        // Twitter username

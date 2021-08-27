@@ -13,7 +13,7 @@ import Layout from '~/layout';
 import 'katex/dist/katex.min.css';
 
 import {
-  Article, TableOfContents, Content, Footer, Header, Metadata, Title
+  Article, TableOfContents, Content, Footer, Header, ArticleMetadata, Title
 } from './styles';
 
 
@@ -21,6 +21,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<GatsbyTypes.BlogPostBySl
   const post = data.markdownRemark!;
   const siteUrl = data.site?.siteMetadata?.siteUrl ?? '';
   const siteTitle = data.site?.siteMetadata?.title ?? '';
+  const siteThumbnail = data.site?.siteMetadata?.thumbnail;
   const { previous, next } = data;
   const { title, description, date, tags, thumbnail } = post.frontmatter!;
   const commentConfig = useComment().site?.siteMetadata?.comment;
@@ -31,13 +32,13 @@ const BlogPostTemplate = ({ data, location }: PageProps<GatsbyTypes.BlogPostBySl
   };
   const meta: Metadata[] = [];
 
-  if (thumbnail) {
+  if (siteThumbnail || thumbnail) {
     const properties = ['og:image', 'twitter:image'];
 
     for (const property of properties) {
       meta.push({
         property,
-        content: `${siteUrl}${thumbnail}`,
+        content: `${siteUrl}${thumbnail ?? siteThumbnail}`,
       });
     }
   }
@@ -56,10 +57,10 @@ const BlogPostTemplate = ({ data, location }: PageProps<GatsbyTypes.BlogPostBySl
       >
         <Header>
           <Title itemProp='headline'>{title}</Title>
-          <Metadata>
+          <ArticleMetadata>
             <span>{date}</span>
             <Tags tags={tags as string[]} />
-          </Metadata>
+          </ArticleMetadata>
         </Header>
         <TableOfContents
           dangerouslySetInnerHTML={{ __html: post.tableOfContents ?? '' }}
@@ -93,6 +94,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         siteUrl
+        thumbnail
       }
     }
     markdownRemark(id: { eq: $id }) {

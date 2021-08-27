@@ -76,6 +76,7 @@ export const createSchemaCustomization = ({ actions }: CreateSchemaCustomization
       description: String
       siteUrl: String
       social: Social
+      thumbnail: String
     }
 
     type Social {
