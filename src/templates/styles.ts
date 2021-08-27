@@ -46,7 +46,7 @@ export const Title = styled('h1', {
   fontSize: '2.25rem',
 });
 
-export const Metadata = styled('div', {
+export const ArticleMetadata = styled('div', {
   display: 'flex',
   alignItems: 'center',
   marginTop: '0.5rem',

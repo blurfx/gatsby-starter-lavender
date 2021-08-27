@@ -24,7 +24,9 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) =>
   const siteMetadata = useSeo().site?.siteMetadata;
   const tags = useArticleTags().allMarkdownRemark?.distinct as string[];
 
+  const siteUrl = data.site?.siteMetadata?.siteUrl ?? '';
   const siteTitle = data.site?.siteMetadata?.title ?? '';
+  const siteThumbnail = data.site?.siteMetadata?.thumbnail;
   const posts = filterPostsByTag(
     filterPostsByTitle(
       data.allMarkdownRemark.nodes, titleFilter),
@@ -42,6 +44,18 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) =>
     setCurrentTag(TAG.ALL);
   };
 
+  const meta: Metadata[] = [];
+  if (siteThumbnail) {
+    const properties = ['og:image', 'twitter:image'];
+
+    for (const property of properties) {
+      meta.push({
+        property,
+        content: `${siteUrl}${siteThumbnail}`,
+      });
+    }
+  }
+
   useInfiniteScroll(infiniteScrollRef, useCallback(() => {
     if (page < totalPage) {
       setPage(page + 1);
@@ -55,6 +69,7 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) =>
         lang='en'
         title={siteMetadata?.title ?? ''}
         description={siteMetadata?.description ?? ''}
+        meta={meta}
         noSiteName
       />
       <Profile />
@@ -86,6 +101,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
+        thumbnail
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
