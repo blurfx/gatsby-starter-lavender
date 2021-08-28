@@ -79,6 +79,10 @@ export const globalStyles = global({
     marginBottom: '0.75rem',
 
     lineHeight: 1.625,
+
+    '> code[class*="language-"]': {
+      whiteSpace: 'pre-wrap',
+    },
   },
   blockquote: {
     paddingLeft: '1rem',
@@ -107,9 +111,6 @@ export const globalStyles = global({
     'pre[class^="language-"]': {
       borderRadius: '0.25rem',
     }
-  },
-  'pre[class*="language-"], code[class*="language-"]': {
-    whiteSpace: 'pre-wrap',
   },
 });
 export const Root = styled('div', {

@@ -90,7 +90,6 @@ export const Content = styled('section', {
   },
   pre: {
     code: {
-      whiteSpace: 'pre-wrap',
       wordBreak: 'break-all',
       overflowWrap: 'break-word',
     },
