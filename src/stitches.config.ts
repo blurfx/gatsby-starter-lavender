@@ -33,6 +33,8 @@ export const { styled, css, getCssString, theme, global } = createCss({
       borderGray: '$gray200',
       borderPrimary: '$primary200',
 
+      inlineCodeBackground: '#404040',
+      inlineCodeColor: '#ffc7d2',
       link: '$primary400',
 
       titleFilterBackground: '$gray100',

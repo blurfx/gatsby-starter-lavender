@@ -112,6 +112,10 @@ export const globalStyles = global({
       borderRadius: '0.25rem',
     }
   },
+  ':not(pre) > code[class*="language-"]': {
+    color: '$inlineCodeColor',
+    background: '$inlineCodeBackground',
+  }
 });
 export const Root = styled('div', {
   display: 'flex',
