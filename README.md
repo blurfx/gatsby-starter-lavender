@@ -50,6 +50,17 @@ A blog template with minimal interfaces based on Gatsby, focused on readability.
 
   [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https%3A%2F%2Fgithub.com%2Fblurfx%2Fgatsby-starter-lavender)
 
+## Customization
+
+### Blog Information
+
+Edit `blog-config.ts` to change blog information.
+
+### Theming
+
+Edit `src/stitches.config.ts` to change the theme color.
+
+You should modify the default object and `darkTheme` to change the light theme and dark theme colors.
 
 # License
 
