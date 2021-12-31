@@ -22,7 +22,7 @@
     "url": "https://github.com/blurfx/gatsby-starter-lavender/issues"
   },
   "dependencies": {
-    "@stitches/react": "^0.2.3",
+    "@stitches/react": "^1.2.6",
     "disqus-react": "^1.1.1",
     "gatsby": "^3.10.2",
     "gatsby-plugin-feed": "^3.10.0",
