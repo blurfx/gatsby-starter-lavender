@@ -1,6 +1,6 @@
-import { styled, global } from '~/stitches.config';
+import { styled, globalCss } from '~/stitches.config';
 
-export const globalStyles = global({
+export const globalStyles = globalCss({
   ':root': {
     fontFamily: '"Pretendard", apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     textRendering: 'optimizeLegibility',
