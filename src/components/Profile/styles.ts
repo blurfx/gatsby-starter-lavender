@@ -49,9 +49,11 @@ export const ExternalLinks = styled('ul', {
 export const LinkItem = styled('li', {
   display: 'inline-block',
 
-  color: '$link',
-
   listStyle: 'none',
 
   transition: 'color $transitionDuration $transitionTiming',
+
+  'a': {
+    color: '$link',
+  }
 });

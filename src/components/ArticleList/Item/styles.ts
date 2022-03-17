@@ -5,10 +5,13 @@ export const Header = styled('header', {
 });
 
 export const Title = styled('h2', {
-  color: '$text500',
   fontSize: '1.5rem',
 
-  transition: 'color $transitionDuration $transitionTiming',
+  'a': {
+    color: '$text500',
+
+    transition: 'color $transitionDuration $transitionTiming',
+  }
 });
 
 export const Section = styled('section', {

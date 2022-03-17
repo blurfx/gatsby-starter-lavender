@@ -39,14 +39,14 @@ export const Circle = styled('div', {
 export const Title = styled('h1', {
   marginLeft: '-2.5rem',
 
-  color: '$text400',
-  fontWeight: 900,
-  fontSize: '2rem',
-  lineHeight: '2rem',
-
-  transition: 'color $transitionDuration $transitionTiming',
-
   a: {
+    color: '$text400',
+    fontWeight: 900,
+    fontSize: '2rem',
+    lineHeight: '2rem',
+
+    transition: 'color $transitionDuration $transitionTiming',
+
     textDecoration: 'none',
   }
 });
