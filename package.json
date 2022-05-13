@@ -68,7 +68,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.0",
-    "typescript": "^4.3.2"
+    "typescript": "^4.6.4"
   },
   "homepage": "https://github.com/blurfx/gatsby-starter-lavender#readme",
   "keywords": [
