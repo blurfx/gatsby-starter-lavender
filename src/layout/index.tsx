@@ -3,13 +3,15 @@ import React, { ComponentProps } from 'react';
 
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
+import { useDarkMode } from '~/hooks/useDarkMode';
 
 import { Container, globalStyles, Root } from './styles';
 
 type Props = React.PropsWithChildren<Pick<PageProps, 'location'>> & ComponentProps<typeof Header>;
 
 const Layout = ({ title, children, resetFilter }: Props) => {
-  globalStyles();
+  const [isDarkMode, ] = useDarkMode();
+  globalStyles(isDarkMode ? 'dark' : 'light');
 
   return (
     <Root>

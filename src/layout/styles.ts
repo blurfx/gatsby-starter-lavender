@@ -1,9 +1,10 @@
 import { styled, globalCss } from '~/stitches.config';
 
-export const globalStyles = globalCss({
+export const globalStyles = (colorScheme: 'light' | 'dark') => globalCss({
   ':root': {
     fontFamily: '"Pretendard", apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     textRendering: 'optimizeLegibility',
+    colorScheme: colorScheme,
   },
   '*': {
     boxSizing: 'border-box',
@@ -116,7 +117,7 @@ export const globalStyles = globalCss({
     color: '$inlineCodeColor',
     background: '$inlineCodeBackground',
   }
-});
+})();
 export const Root = styled('div', {
   display: 'flex',
   minHeight: '100vh',
