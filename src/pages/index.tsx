@@ -35,7 +35,7 @@ const BlogIndex = ({ data, location }: PageProps<GatsbyTypes.BlogIndexQuery>) =>
   const articlePerPage = 5;
   const totalPage = Math.ceil(posts.length / articlePerPage);
 
-  const onTitleFilterChange = useCallback((event) => {
+  const onTitleFilterChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setTitleFilter(event.target.value);
   }, []);
 

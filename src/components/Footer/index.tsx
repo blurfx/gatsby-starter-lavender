@@ -10,11 +10,13 @@ const Footer = () => {
 
   return (
     <Container>
+      <>
       © {githubUsername
-        ? <a href={`https://github.com/${githubUsername}`}>{author}</a>
-        : { author }
-      }, Built with{' '}
-      <a href='https://github.com/blurfx/gatsby-starter-lavender'>gatsby-starter-lavender</a>
+          ? <a href={`https://github.com/${githubUsername}`}>{author}</a>
+          : { author }
+        }, Built with{' '}
+        <a href='https://github.com/blurfx/gatsby-starter-lavender'>gatsby-starter-lavender</a>
+      </>
     </Container>
   );
 };
