@@ -1,7 +1,9 @@
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { memo, PropsWithChildren } from 'react';
 
 import { useAuthorProfile } from '~/hooks/useAuthorProfile';
+import { useCheckAboutPage } from '~/hooks/useCheckAboutPage';
 
 import { Container, ExternalLinks, LinkItem, Name, Description, Wrapper } from './styles';
 
@@ -30,6 +32,7 @@ interface SocialLink {
 
 const Profile = () => {
   const siteMetadata = useAuthorProfile().site?.siteMetadata;
+  const isAboutPageExists = useCheckAboutPage();
 
   const author = siteMetadata?.author;
   const description = siteMetadata?.description;
@@ -78,6 +81,11 @@ const Profile = () => {
         <Description>{description}</Description>
 
         <ExternalLinks>
+          {isAboutPageExists &&
+              <LinkItem>
+                <Link to={'/about'}>About</Link>
+              </LinkItem>
+          }
           {Object.entries(social ?? {}).map(([key, username]) => {
             const serviceName = key as keyof GatsbyTypes.Social;
 
